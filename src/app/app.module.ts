@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { MaterialModule } from '../modules/material.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { HomeComponent } from './home/home.component';
     MatDialogModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MaterialModule,
   ],
+  exports: [MaterialModule],
   providers: [],
   bootstrap: [AppComponent]
 })
