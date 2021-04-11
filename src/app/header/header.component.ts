@@ -8,7 +8,6 @@ import {AboutComponent} from './about/about.component';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-
   constructor(public dialog: MatDialog) { }
 
   openDialog(): any {
@@ -17,4 +16,3 @@ export class HeaderComponent {
     });
   }
 }
-
