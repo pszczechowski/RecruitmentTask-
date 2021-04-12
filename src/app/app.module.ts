@@ -10,6 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { MaterialModule } from '../modules/material.module';
+import { CommonModule } from '@angular/common';
+import { CountryComponent } from './country/country.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { MaterialModule } from '../modules/material.module';
     HeaderComponent,
     AboutComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    CountryComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +29,7 @@ import { MaterialModule } from '../modules/material.module';
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
+    CommonModule,
   ],
   exports: [MaterialModule],
   providers: [],

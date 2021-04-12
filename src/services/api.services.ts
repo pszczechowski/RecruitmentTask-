@@ -5,19 +5,19 @@ import { HttpClient } from '@angular/common/http';
     providedIn: 'root',
 })
 export class ApiService {
-  apiUrl = 'https://restcountries.eu/rest/v2';
+ private apiUrl = 'https://restcountries.eu/rest/v2';
 
   constructor(private httpClient: HttpClient) {}
 
-  getCountries() {
+  getCountries(): any {
     return this.httpClient.get(`${this.apiUrl}/all`);
   }
 
-  getCountry(id) {
+  getCountry(id): any {
     return this.httpClient.get(`${this.apiUrl}/alpha?codes=${id}`);
   }
 
-  getRegionCountries(region) {
+  getRegionCountries(region): any {
     return this.httpClient.get(`${this.apiUrl}/region/${region}`);
   }
 }

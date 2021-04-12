@@ -1,33 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiService} from 'src/services/api.services';
+import { ApiService } from 'src/services/api.services';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
   loading = false;
   countries: any;
+  reg = '';
+  image: {} = [];
   regions: {} = [
-    {name: 'All', value: ''},
-    { name: 'Africa', value: 'africa' },
-    { name: 'Americas', value: 'americas' },
-    { name: 'Asia', value: 'asia' },
-    { name: 'Europe', value: 'europe' },
-    { name: 'Oceania', value: 'oceania' }
+    { name: 'Africa', value: 'africa', image: '../../assets/africa.jpg' },
+    { name: 'Americas', value: 'americas', image: '../../assets/america.jpg' },
+    { name: 'Asia', value: 'asia', image: '../../assets/asia.jpg' },
+    { name: 'Europe', value: 'europe', image: '../../assets/europe.jpg' },
+    { name: 'Oceania', value: 'oceania', image: '../../assets/oceania.jpg' },
   ];
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService) {}
 
   ngOnInit(): void {
     this.loading = true;
     this.getCountries();
   }
   getCountries(): void {
-    this.api.getCountries().subscribe(res => {
-    this.countries = res;
-    this.loading = false;
+    this.api.getCountries().subscribe((res) => {
+      this.countries = res;
+      this.loading = false;
     });
   }
   getRegionCountries(region): void {
@@ -35,11 +36,10 @@ export class HomeComponent implements OnInit {
       this.getCountries();
     } else {
       this.loading = true;
-      this.api.getRegionCountries(region.target.value).subscribe(res => {
+      this.api.getRegionCountries(region.target.value).subscribe((res) => {
         this.countries = res;
         this.loading = false;
       });
     }
   }
-
 }

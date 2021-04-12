@@ -1,1 +1,15 @@
-
+<div class="home" *ngIf="!loading">
+  <div class="region" *ngFor="let region of regions">
+    <img src="{{ region.image }}" />
+    <mat-label (click)="getRegionCountries($event)" name="region" id="region">
+      <button [value]="region.value">{{ region.name }}</button>
+    </mat-label>
+  </div>
+  <div class="home__countries">
+    <app-country
+      *ngFor="let country of countries"
+      [country]="country"
+      [routerLink]="['/country/', country.alpha3Code]"
+    ></app-country>
+  </div>
+</div>
