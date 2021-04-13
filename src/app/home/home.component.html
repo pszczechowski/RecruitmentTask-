@@ -5,11 +5,10 @@
       <button [value]="region.value">{{ region.name }}</button>
     </mat-label>
   </div>
-  <div class="home__countries">
+  <div class="homeCountries">
     <app-country
       *ngFor="let country of countries"
       [country]="country"
-      [routerLink]="['/country/', country.alpha3Code]"
     ></app-country>
   </div>
 </div>

@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { MaterialModule } from '../modules/material.module';
 import { CommonModule } from '@angular/common';
 import { CountryComponent } from './country/country.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CountryComponent } from './country/country.component';
     HttpClientModule,
     MaterialModule,
     CommonModule,
+    RouterModule
   ],
   exports: [MaterialModule],
   providers: [],
