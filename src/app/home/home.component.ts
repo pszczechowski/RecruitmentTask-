@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/services/api.services';
+import { AfterViewInit, Component, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api.services';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,7 @@ import { ApiService } from 'src/services/api.services';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  loading = false;
-  countries: any;
-  reg = '';
+  countries;
   image: {} = [];
   regions: {} = [
     { name: 'Africa', value: 'africa', image: '../../assets/africa.jpg' },
@@ -19,27 +18,21 @@ export class HomeComponent implements OnInit {
     { name: 'Oceania', value: 'oceania', image: '../../assets/oceania.jpg' },
   ];
 
-  constructor(private api: ApiService) {}
+  constructor(private apiService: ApiService, private router: Router) {}
 
   ngOnInit(): void {
-    this.loading = true;
     this.getCountries();
   }
   getCountries(): void {
-    this.api.getCountries().subscribe((res) => {
+    this.apiService.getCountries().subscribe((res) => {
       this.countries = res;
-      this.loading = false;
     });
   }
   getRegionCountries(region): void {
     if (region.target.value === '') {
       this.getCountries();
     } else {
-      this.loading = true;
-      this.api.getRegionCountries(region.target.value).subscribe((res) => {
-        this.countries = res;
-        this.loading = false;
-      });
+      this.router.navigateByUrl(region.target.value + '/countries');
+    }
     }
   }
-}

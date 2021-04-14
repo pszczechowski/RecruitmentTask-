@@ -13,6 +13,7 @@ import { MaterialModule } from '../modules/material.module';
 import { CommonModule } from '@angular/common';
 import { CountryComponent } from './country/country.component';
 import { RouterModule } from '@angular/router';
+import { CountryDetailsComponent } from './country-details/country-details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RouterModule } from '@angular/router';
     AboutComponent,
     FooterComponent,
     HomeComponent,
-    CountryComponent
+    CountryComponent,
+    CountryDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,7 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     MaterialModule,
     CommonModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [MaterialModule],
   providers: [],

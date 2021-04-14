@@ -10,7 +10,7 @@ import {AboutComponent} from './about/about.component';
 export class HeaderComponent {
   constructor(public dialog: MatDialog) { }
 
-  openDialog(): any {
+  openDialog(): void {
     this.dialog.open(AboutComponent, {
       width: '350px',
     });

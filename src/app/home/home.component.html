@@ -1,14 +1,7 @@
-<div class="home" *ngIf="!loading">
+<div class="home">
   <div class="region" *ngFor="let region of regions">
     <img src="{{ region.image }}" />
     <mat-label (click)="getRegionCountries($event)" name="region" id="region">
       <button [value]="region.value">{{ region.name }}</button>
     </mat-label>
   </div>
-  <div class="homeCountries">
-    <app-country
-      *ngFor="let country of countries"
-      [country]="country"
-    ></app-country>
-  </div>
-</div>
