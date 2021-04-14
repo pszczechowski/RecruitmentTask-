@@ -22,7 +22,7 @@ export class CountryComponent implements OnInit {
       console.log(res);
     });
   }
-  
+
   getRegion(): string{
     return this.route.snapshot.paramMap.get('region');
   }
@@ -48,5 +48,9 @@ export class CountryComponent implements OnInit {
       name = name.replace(matchFailsUrl[i], '');
     }
     return name;
+  }
+
+  onBack(): void {
+    history.back();
   }
 }
