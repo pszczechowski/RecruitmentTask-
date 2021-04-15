@@ -14,7 +14,6 @@ import { CommonModule } from '@angular/common';
 import { CountryComponent } from './country/country.component';
 import { RouterModule } from '@angular/router';
 import { CountryDetailsComponent } from './country-details/country-details.component';
-import { SpacerComponent } from './spacer/spacer.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { SpacerComponent } from './spacer/spacer.component';
     HomeComponent,
     CountryComponent,
     CountryDetailsComponent,
-    SpacerComponent
   ],
   imports: [
     BrowserModule,

@@ -34,5 +34,5 @@ export class HomeComponent implements OnInit {
     } else {
       this.router.navigateByUrl(region.target.value + '/countries');
     }
-    }
   }
+}
