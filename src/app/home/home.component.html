@@ -1,7 +1,9 @@
+<div class="container"><h1>Select region:</h1></div>
 <div class="home">
   <div class="region" *ngFor="let region of regions">
     <img src="{{ region.image }}" />
-    <mat-label (click)="getRegionCountries($event)" name="region" id="region">
-      <button [value]="region.value">{{ region.name }}</button>
-    </mat-label>
-  </div>
+    <button (click)="getRegionCountries($event)" [value]="region.value">
+      {{ region.name }}
+    </button>
+</div>
+</div>

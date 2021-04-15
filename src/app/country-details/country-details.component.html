@@ -1,6 +1,35 @@
-<div class="countryForm">
-  <!-- <div [routerLink]="[ '/country' ]"><button >BACK</button></div> -->
-  <button (click)="onBack()">BACK</button>
-  <h1>{{ getSingleStringValue('name') }}</h1>
-  <img src="{{ getSingleValue('flag') }}" style="width: 600px; height: 400px;" alt="{{ getSingleStringValue('name') }}"> 
+<div class="button"><button (click)="onBack()">Back</button></div>
+<div class="container">
+  <div class="countryHeader">
+    <img
+      src="{{ getSingleValue('flag') }}"
+      alt="{{ getSingleStringValue('name') }}"
+    />
+    <p><strong>Name of country: </strong>{{ getSingleStringValue("name") }}</p>
+  </div>
+  <div class="countryDetails">
+    <p><strong>Capital: </strong> {{ getSingleStringValue("capital") }}</p>
+
+    <p><strong>Currencie: </strong></p>
+    <div *ngFor="let currencie of getStringifyArrayObjectValue('currencies')">
+      <p>{{ currencie }}</p>
+    </div>
+    <p>
+      <strong>Population: </strong> {{ getSingleStringValue("population") }}
+    </p>
+    <p><strong>Area: </strong> {{ getSingleStringValue("area") }}</p>
+    <p><strong>Language: </strong></p>
+    <div *ngFor="let language of getStringifyArrayObjectValue('languages')">
+      <p>{{ language }}</p>
+    </div>
+    <p>
+      <strong>Geographic coordinates: </strong>
+      {{ getArrayObjectValue("latlng") }}
+    </p>
+    <p><strong>Numeric code: </strong> {{ getSingleValue("numericCode") }}</p>
+    <p><strong>Translations: </strong></p>
+    <div *ngFor="let translate of getStringifyObjectValue('translations')">
+      <p>{{ translate }}</p>
+    </div>
+  </div>
 </div>

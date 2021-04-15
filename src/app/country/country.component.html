@@ -1,15 +1,20 @@
+<div class="button"><button (click)="onBack()">Back</button></div>
 <div class="container">
-  <button (click)="onBack()">BACK</button>
-  <div
-    class="countryCard"
-    *ngFor="let item of country" [country]="country"
-  >
-    <img [src]="item.flag" [alt]="item.name" />
-    <div class="countryCardContent">
-      <h3>{{ item.name }}</h3>
-      <button mat-button><a href="{{getRegion()}}/country/{{getValidPath(item['name'])}}">Show country</a></button>
-      <div class="home__countries">
-      </div>
-    </div>
-  </div>
+  <mat-list>
+    <mat-list-item *ngFor="let item of country">
+      <img
+        [src]="item.flag"
+        [alt]="item.name"
+        style="width: 50px; height: 30px"
+      />
+      <p>{{ item.name }}</p>
+      <button mat-icon-button>
+        <a
+          mat-icon
+          href="{{ getRegion() }}/country/{{ getValidPath(item['name']) }}"
+          >info</a
+        >
+      </button>
+    </mat-list-item>
+  </mat-list>
 </div>
