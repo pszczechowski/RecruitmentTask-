@@ -1,15 +1,10 @@
 .navbar {
-  top: 0;
-  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   background-image: url("../../assets/background.png");
   background-size: cover;
-  margin-bottom: 15px;
-  margin-top: -8px;
-
   button {
     background: linear-gradient(to left top, #712dfd 50%, #000000 50%);
     border-style: none;
