@@ -1,5 +1,39 @@
-
-.countryForm {
-    width: 100%;
-    margin-top: 100px;
+.button button {
+  margin-top: -45px;
+  margin-left: 10px;
+  position: absolute;
+  border-style: none;
+  color: #fff;
+  font-size: 23px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to left top, #712dfd 50%, #000000 50%);
+}
+button:hover {
+  transition: all 0.5s;
+  transform: rotate(-3deg) scale(1.1);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.countryHeader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  img {
+    width: 50%;
+  }
+}
+.countryDetails {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
