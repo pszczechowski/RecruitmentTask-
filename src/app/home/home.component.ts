@@ -11,11 +11,11 @@ export class HomeComponent implements OnInit {
   countries;
   image: {} = [];
   regions: {} = [
-    { name: 'Africa', value: 'africa', image: '../../assets/africa.jpg' },
-    { name: 'Americas', value: 'americas', image: '../../assets/america.jpg' },
-    { name: 'Asia', value: 'asia', image: '../../assets/asia.jpg' },
-    { name: 'Europe', value: 'europe', image: '../../assets/europe.jpg' },
-    { name: 'Oceania', value: 'oceania', image: '../../assets/oceania.jpg' },
+    { name: 'Africa', value: 'africa', image: './assets/africa.jpg' },
+    { name: 'Americas', value: 'americas', image: './assets/america.jpg' },
+    { name: 'Asia', value: 'asia', image: './assets/asia.jpg' },
+    { name: 'Europe', value: 'europe', image: './assets/europe.jpg' },
+    { name: 'Oceania', value: 'oceania', image: './assets/oceania.jpg' },
   ];
 
   constructor(private apiService: ApiService, private router: Router) {}
