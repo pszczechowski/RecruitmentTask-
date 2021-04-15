@@ -1,0 +1,15 @@
+<div class="container">
+  <button (click)="onBack()">BACK</button>
+  <div
+    class="countryCard"
+    *ngFor="let item of country" [country]="country"
+  >
+    <img [src]="item.flag" [alt]="item.name" />
+    <div class="countryCardContent">
+      <h3>{{ item.name }}</h3>
+      <button mat-button><a href="{{getRegion()}}/country/{{getValidPath(item['name'])}}">Show country</a></button>
+      <div class="home__countries">
+      </div>
+    </div>
+  </div>
+</div>
